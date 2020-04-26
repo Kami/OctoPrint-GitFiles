@@ -133,6 +133,16 @@ Now that you've initially tested your keypair and you no longer need that tempor
 pi@octopi:~ $ cd ~ && rm -rF tmp
 ```
 
+If you use a custom named private key file and you get "Permission denied (publickey)." or similar error when trying to clone the repo, you may need to tell ssh which private key file to use by adding the following content to ``~/.ssh/config`` file.
+
+```ini
+Host github.com
+    IdentityFile ~/.ssh/id_rsa_github
+    IdentitiesOnly yes
+```
+
+``~/.ssh/id_rsa_github`` should point to the private key file you created above.
+
 ---------------------------------------------
 
 |Description|Version|Author|Last Update|
